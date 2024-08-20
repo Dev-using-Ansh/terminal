@@ -162,7 +162,6 @@ function printCharByChar(inputStripData,inputStrip,delay){
     console.log(inputStripData);
     inputStrip.innerHTML="";
     let charIndex = 0;
-    
     // cursor.classList.add("blink");
     let intervalID = setInterval(()=>{
         // if(cursor.parentNode)
@@ -179,13 +178,14 @@ function printCharByChar(inputStripData,inputStrip,delay){
             cursorBlinking();
             setTimeout(()=>{
                 helpButton();
+                isProcessing = false;
                 inputButton.select();
             },1000);
             inputButton.value = "help";
             console.log("this is just before help")
             console.log(inputButton.innerHTML);
-            inputButton.select();
             clearInterval(intervalID);
+            // isProcessing = false;
         }
         
         charIndex += 1;
@@ -213,16 +213,16 @@ function helpButton(){
     let line4 = document.querySelector(".line-4");
     cursor.style.display = "none";
     line4.style.visibility = "visible";
-    document.addEventListener("keydown",(button)=>{
-        if(button.key === "Enter" && !isProcessing){
-            enterForHelp();
-            isProcessing = true;
-        }
-    })
+        document.addEventListener("keydown",(button)=>{
+            if(button.key === "Enter" && !isProcessing){
+                enterForHelp();
 
+            }
+        })
+    
+    
 }
 function enterForHelp(){
-    
     let line1_content = document.getElementById("line1-content");
     line1_content.innerText = "Executed Command:  "+inputButton.value;
     console.log(inputButton.value);
@@ -242,10 +242,9 @@ function enterForHelp(){
     inputStripData = getResultText(cmd);
     printCharByChar(inputStripData,inputStrip,delay);
     setTimeout(()=>{
-        isProcessing = false;
         openWindow(cmd);
     },3000);
-    
+    isProcessing = true;
     // let 
 }
 function getResultText(cmd){
@@ -331,7 +330,7 @@ cursor.style.backgroundColor = "white";
 cursor.style.color = "white";
 cursor.style.position = "relative";
 cursor.style.top = "3px";
-let isProcessing = false;
+let isProcessing = true ;
 // cursor.classList.add("blink");
 let inputButton = document.getElementById("input-button");
 
