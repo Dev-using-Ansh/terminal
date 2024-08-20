@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    font-family: Lato, sans-serif;
+}
+.body{
+    width: 100vw;
+    height: 100vh;
+    /* background: linear-gradient(200deg,rgb(204, 49, 49),rgb(247, 247, 122),rgb(37, 141, 37)); */
+    /* padding: 30px 20px ; */
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+.container{
+    height: 80%;
+    width: 80%;
+    background-color: rgba(0, 0, 0, 0.652);
+    padding: 0px 10px;
+    font-size: 25px;
+    animation: come-in 3s ;
+    padding: 20px;
+    font-family: "Edu VIC WA NT Beginner", cursive;
+    font-optical-sizing: auto;
+    /* font-weight: <weight>; */
+    font-style: normal;
+    
+}
+.color{
+    display: flex;
+    margin-top: 5px;
+}
+.red ,.green ,.yellow{
+    border: 1px solid rgba(0, 0, 0, 0.792);
+    border-radius: 10px;
+    width: 15px;
+    height: 15px;
+}
+.red{
+    background-color: red;
+}
+.yellow{
+    background-color: yellow;
+    margin-left: 20px; 
+}
+.green{
+    background-color: rgb(22, 241, 22);
+    margin-left:20px;
+}
+.heading{
+    display: flex;
+    width: 100%;
+    /* background-color: #fff; */
+}
+.title{
+    /* background-color: red; */
+    color: white;
+    text-align: center;
+    margin-top: 5px;
+    width: 100%;
+    font-size: 22px;
+}
+.container-body{
+    box-sizing: border-box;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-evenly; */
+    row-gap: 30px;
+    
+}
+
+.blink{
+    background-color: white;
+    animation: blinker steps(1) 500ms infinite ;
+    cursor: pointer;
+    /*alternate wapas to->from*/
+}
+@keyframes blinker {
+    0% { opacity: 0.0; }
+    50% { opacity: 1.0; }
+    100% {opacity: 0.0;}
+}
+@keyframes come-in {
+    0% {
+        transform: scale(0.8); /* Start slightly smaller */
+        opacity: 0; /* Start invisible */
+      }
+    100% {
+        transform: scale(1); /* Back to normal size */
+        opacity: 1; /* Remain fully visible */
+      }
+    
+}
+.line-4{
+    visibility: hidden;
+}
+input[type="text"]{
+   background-color: transparent;
+   font-size: 1em;
+    color: white;
+    border: none;
+    outline: none;
+} 
+
+#line1-content,#line2-content,#line3-content,#line4-content,.body{
+    line-height: 1.7rem;
+    word-spacing: 0.4rem;
+} 
+.div_cursor{
+    display: inline;
+    width: 1px;
+    height: 1.5rem;
+}
+
