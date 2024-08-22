@@ -1,4 +1,4 @@
-const LINKEDIN_URL = "https://www.linkedin.com/feed/?trk=guest_homepage-basic_google-one-tap-submit";
+const LINKEDIN_URL = "https://www.linkedin.com/in/ansh-kumar-gupta/";
 const RESUME_URL = "https://drive.google.com/file/d/1tlq8ge_Y55TBmjC-FALyWGawK1y4UwW2/view";
 const GITHUB_URL = "https://github.com/Dev-using-Ansh";
 
